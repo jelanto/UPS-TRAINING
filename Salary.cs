@@ -1,6 +1,6 @@
 using System;
 
-public class Hello
+public class Salary
 {
     public static void Main(string[] args)
     {
@@ -19,13 +19,15 @@ public class Hello
         {
             double bonus = finalSalary * 0.10;
             finalSalary = finalSalary + bonus;
+
+            Console.WriteLine("Final Salary: " + finalSalary);
         }
         else
         {
-            finalSalary = finalSalary;
+            Console.WriteLine("No bonus added.");
+            Console.WriteLine("Final Salary: " + finalSalary);
         }
 
         Console.WriteLine("Salary Per Day: " + salaryPerDay);
-        Console.WriteLine("Final Salary: " + finalSalary);
     }
 }

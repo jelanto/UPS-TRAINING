@@ -1,6 +1,6 @@
 using System;
 
-public class Hello
+public class Quadrant
 {
     public static void Main(string[] args)
     {

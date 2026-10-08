@@ -1,6 +1,6 @@
 using System;
 
-public class Hello
+public class Bill
 {
     public static void Main(string[] args)
     {
@@ -14,24 +14,22 @@ public class Hello
         double amount = Convert.ToDouble(Console.ReadLine());
 
         double totalAmount = quantity * amount;
-        double finalAmount;
 
         if (totalAmount > 5000)
         {
             double discount = totalAmount * 0.18;
-            double discountedAmount = totalAmount - discount;
+            totalAmount = totalAmount - discount;
 
-            double gst = discountedAmount * 0.12;
-            finalAmount = discountedAmount + gst;
+            double gst = totalAmount * 0.12;
+            totalAmount = totalAmount + gst;
         }
         else
         {
-            double gst = totalAmount * 0.12;
-            finalAmount = totalAmount + gst;
+            Console.WriteLine("No discount or GST applied.");
+            Console.WriteLine("Final Amount: " + totalAmount);
         }
 
-        Console.WriteLine("Product: " + productName);
-        Console.WriteLine("Total Amount: " + totalAmount);
-        Console.WriteLine("Final Amount: " + finalAmount);
+        Console.WriteLine("Product Name: " + productName);
+        Console.WriteLine("Final Amount: " + totalAmount);
     }
 }
