@@ -7,11 +7,11 @@ public class Bank
         int PIN = 1234;
         int BALANCE = 100000;
         Console.WriteLine("Deposit / Withdrawl:");
-        string Choice = Console.ReadLine();
+        string Choice = Console.ReadLine()??"";
         Console.WriteLine("Enter the Amount:");
         int amount = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Enter mode of transaction(Cash/Cheque):");
-        string Mode = Console.ReadLine();
+        string Mode = Console.ReadLine()??"";
         if(Choice == "Deposit")
         {
             
