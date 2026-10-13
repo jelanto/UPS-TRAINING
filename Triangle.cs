@@ -8,7 +8,7 @@ public class Triangle
         {
             for (int k = 4 - i; k > 0; k--)
             {
-                Console.Write("-");
+                Console.Write(" ");
             }
 
             for (int j = 1; j <= i; j++)
