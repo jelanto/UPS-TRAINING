@@ -1,5 +1,5 @@
 using System;
-public class Sumofdigits
+public class Spy
 {
     public static void Main(string[] args)
     {
