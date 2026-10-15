@@ -18,7 +18,7 @@ public static class Primenum
 
             if (count == 2)
             {
-                Console.WriteLine(i);
+                Console.Write(i + " ");
             }
         }
     }
