@@ -48,7 +48,7 @@ class Payment1
         }
         else
         {
-            return null;
+            throw new Exception("Invalid payment type");
         }
     }
 }
