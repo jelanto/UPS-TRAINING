@@ -1,0 +1,80 @@
+
+using System;
+
+public class InvalidMarkException : Exception
+{
+    public InvalidMarkException(string message) : base(message)
+    {
+    }
+}
+
+public class StudentMarkCalculator
+{
+    public static void Main(string[] args)
+    {
+        try
+        {
+            int mark1, mark2, mark3, mark4, mark5;
+
+            Console.Write("Enter mark for Subject 1: ");
+            mark1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter mark for Subject 2: ");
+            mark2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter mark for Subject 3: ");
+            mark3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter mark for Subject 4: ");
+            mark4 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter mark for Subject 5: ");
+            mark5 = Convert.ToInt32(Console.ReadLine());
+
+            if (mark1 < 0 || mark1 > 100 ||
+                mark2 < 0 || mark2 > 100 ||
+                mark3 < 0 || mark3 > 100 ||
+                mark4 < 0 || mark4 > 100 ||
+                mark5 < 0 || mark5 > 100)
+            {
+                throw new InvalidMarkException(
+                    "Marks must be between 0 and 100.");
+            }
+
+            int total = mark1 + mark2 + mark3 + mark4 + mark5;
+
+            double average = total / 5.0;
+
+            Console.WriteLine("\n===== STUDENT RESULT =====");
+
+            Console.WriteLine("Total Marks: " + total);
+            Console.WriteLine("Average: " + average);
+
+            if (mark1 >= 35 && mark2 >= 35 &&
+                mark3 >= 35 && mark4 >= 35 && mark5 >= 35)
+            {
+                Console.WriteLine("Result: PASS");
+            }
+            else
+            {
+                Console.WriteLine("Result: FAIL");
+            }
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter numeric marks only.");
+        }
+        catch (InvalidMarkException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Unexpected Error: " + ex.Message);
+        }
+        finally
+        {
+            Console.WriteLine("\nCalculation process has ended.");
+        }
+    }
+}
